@@ -1,0 +1,23 @@
+{
+  "matches": [
+    {
+      "playerA": "Claire",
+      "playerB": "Tinashe",
+      "superTie": false,
+      "set1A": 7,
+      "set1B": 6,
+      "set2A": 3,
+      "set2B": 6,
+      "set3A": 6,
+      "set3B": 2,
+      "gameA": 0,
+      "gameB": 0,
+      "tieBreakA": 0,
+      "tieBreakB": 0,
+      "set1": 0,
+      "set2": 0,
+      "set3": 1,
+      "id": 1
+    }
+  ]
+}
