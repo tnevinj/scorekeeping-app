@@ -6,7 +6,7 @@ const Header = ({ onAdd, showAdd}) => {
   return (
     <div>
       <header className='header'>
-        <h1>Tennis Scorekeeper</h1>
+        <h1>tennisscore.co.za</h1>
         <Button color={showAdd ? 'red' : 'steelblue'} text={showAdd ? 'Close' : 'New Match'} onClick={onAdd}/>
       </header>
     </div>

@@ -20,23 +20,18 @@ const Match = ({ match, onDelete, onKeep, showKeep }) => {
   
   //Fetch matches
   const fetchMatches = async () => {
-    const res = await fetch('http://localhost:5000/matches')
+    const res = await fetch('https://json-server-smoky-three.vercel.app/matches')
     const data = await res.json()
     return data
   }
 
-  const restorePoint = match
-
-  const unDo = () => {
-    match=restorePoint
-    updateMatch(match)
-  }
-
-  const updateMatch = async (match) => {
-    const res = await fetch(`http://localhost:5000/matches/${match.id}`, {
+  const updateMatch = async (updatedMatch) => {
+    setMatches(matches.filter((match) => match.id !== updatedMatch.id))
+    setMatches([...matches, updatedMatch])
+    const res = await fetch(`https://json-server-smoky-three.vercel.app/matches/${match.id}`, {
       method: 'PUT',
       headers: {
-        'Content-type': 'application/json'
+        "Content-type": 'application/json'
       },
       body: JSON.stringify(match)
     })
@@ -278,7 +273,7 @@ const Match = ({ match, onDelete, onKeep, showKeep }) => {
             </tbody>
         </table>
         
-        {showKeep ? <KeepScore onDelete={onDelete} match={match} pointA={pointA} pointB={pointB} unDo={unDo} /> : ''}
+        {showKeep ? <KeepScore onDelete={onDelete} match={match} pointA={pointA} pointB={pointB} /> : ''}
     </div>
   )
 }

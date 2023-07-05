@@ -22,17 +22,17 @@ function App() {
 
   //Fetch matches
   const fetchMatches = async () => {
-    const res = await fetch('http://localhost:5000/matches')
+    const res = await fetch('https://json-server-smoky-three.vercel.app/matches')
     const data = await res.json()
     return data
   }
 
   //Create new match
   const newMatch = async (match) => {
-    const res = await fetch('http://localhost:5000/matches', {
+    const res = await fetch('https://json-server-smoky-three.vercel.app/matches', {
       method: 'POST',
       headers: {
-        'Content-type': 'application/json'
+        "Content-type": 'application/json'
       },
       body: JSON.stringify(match)
     })
@@ -43,7 +43,7 @@ function App() {
 
   //Delete match
   const deleteMatch = async (id) => {
-    await fetch(`http://localhost:5000/matches/${id}`, {
+    await fetch(`https://json-server-smoky-three.vercel.app/matches/${id}`, {
       method: 'DELETE',
     })
     setMatches(matches.filter((match) => match.id !== id))
